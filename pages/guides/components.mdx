@@ -1,0 +1,98 @@
+---
+title: Using Components
+description: Add interactive elements like callouts, tabs, cards, and steps to your documentation.
+icon: puzzle
+---
+
+# Using Components
+
+Tome includes built-in components you can use in any `.mdx` file. No imports required.
+
+## Callouts
+
+Draw attention to important information:
+
+<Callout type="info" title="Information">
+  Use info callouts for context and background details.
+</Callout>
+
+<Callout type="tip" title="Tip">
+  Use tip callouts for best practices and helpful suggestions.
+</Callout>
+
+<Callout type="warning" title="Warning">
+  Use warning callouts when the reader should proceed with caution.
+</Callout>
+
+<Callout type="danger" title="Danger">
+  Use danger callouts for critical warnings about destructive actions.
+</Callout>
+
+## Tabs
+
+Present content in multiple variants — different languages, platforms, or package managers:
+
+<Tabs items={["npm", "yarn", "pnpm"]}>
+  <div>
+    ```bash
+    npm install @tomehq/cli
+    ```
+  </div>
+  <div>
+    ```bash
+    yarn add @tomehq/cli
+    ```
+  </div>
+  <div>
+    ```bash
+    pnpm add @tomehq/cli
+    ```
+  </div>
+</Tabs>
+
+## Cards
+
+Link to related pages or showcase features:
+
+<CardGroup cols={2}>
+  <Card title="Tutorials" icon="🎓" href="/tutorials/getting-started">
+    Step-by-step lessons to learn the basics.
+  </Card>
+  <Card title="Reference" icon="📖" href="/reference/config">
+    Technical details on every configuration option.
+  </Card>
+</CardGroup>
+
+## Steps
+
+Guide readers through a sequential process:
+
+<Steps>
+  <div>
+    **Create an MDX file**
+
+    Create a new file with the `.mdx` extension in your `pages/` directory.
+  </div>
+  <div>
+    **Add a component**
+
+    Use any built-in component directly in your content. No imports needed.
+  </div>
+  <div>
+    **Save and preview**
+
+    The dev server reloads automatically when you save.
+  </div>
+</Steps>
+
+## Accordions
+
+Collapse content behind a toggle — useful for FAQs:
+
+<Accordion title="Do I need to import components?">
+  No. All built-in components are automatically available in every `.mdx` file.
+</Accordion>
+
+<Accordion title="Can I use components in .md files?">
+  Components only work in `.mdx` files. Rename your file from `.md` to `.mdx` to use them.
+</Accordion>
