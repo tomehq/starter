@@ -3,11 +3,12 @@
 </p>
 
 <p align="center">
+  <a href="#quick-start">Quick Start</a> ·
+  <a href="#structure">Structure</a> ·
+  <a href="#commands">Commands</a> ·
+  <a href="#deploying">Deploying</a> ·
+  <a href="#configuration">Configuration</a> ·
   <a href="https://tome.center/docs">Docs</a> ·
-  <a href="https://tome.center/docs/v3/tutorials/getting-started">Quick Start</a> ·
-  <a href="https://tome.center/docs/v3/reference/config">Configuration</a> ·
-  <a href="https://tome.center/docs/v3/reference/components">Components</a> ·
-  <a href="https://tome.center/docs/v3/reference/cli">CLI</a> ·
   <a href="https://github.com/tomehq/tome">GitHub</a>
 </p>
 
