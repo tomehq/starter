@@ -2,6 +2,7 @@
   "name": "my-docs",
   "private": true,
   "type": "module",
+  "packageManager": "pnpm@9.0.0",
   "scripts": {
     "dev": "tome dev",
     "build": "tome build",
