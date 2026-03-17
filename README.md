@@ -1,3 +1,24 @@
+<p align="center">
+  <img src="./banner.svg" width="100%" alt="Tome — Beautiful documentation that doesn't cost a fortune." />
+</p>
+
+<p align="center">
+  <a href="https://tome.center/docs">Docs</a> ·
+  <a href="https://tome.center/docs/v3/tutorials/getting-started">Quick Start</a> ·
+  <a href="https://tome.center/docs/v3/reference/config">Configuration</a> ·
+  <a href="https://tome.center/docs/v3/reference/components">Components</a> ·
+  <a href="https://tome.center/docs/v3/reference/cli">CLI</a> ·
+  <a href="https://github.com/tomehq/tome">GitHub</a>
+</p>
+
+<p align="center">
+  <a href="https://github.com/tomehq/starter/actions"><img src="https://github.com/tomehq/starter/actions/workflows/deploy.yml/badge.svg" alt="Build" /></a>
+  <a href="https://www.npmjs.com/package/@tomehq/cli"><img src="https://img.shields.io/npm/v/@tomehq/cli.svg?label=cli" alt="npm" /></a>
+  <a href="https://github.com/tomehq/tome/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="MIT License" /></a>
+</p>
+
+---
+
 # Tome Starter
 
 A starter template for [Tome](https://tome.center) documentation sites. Structured using the [Diataxis](https://diataxis.fr) framework.
