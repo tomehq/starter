@@ -10,10 +10,10 @@ git clone https://github.com/tomehq/starter my-docs
 cd my-docs
 
 # Install dependencies
-npm install
+pnpm install
 
 # Start the dev server
-npm run dev
+pnpm dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) to see your docs.
@@ -26,31 +26,90 @@ npx @tomehq/cli init my-docs
 
 ## Structure
 
+This template follows the [Diataxis](https://diataxis.fr) documentation framework, organizing content into four categories:
+
 ```
 pages/
 ├── index.md                    # Welcome page
-├── tutorials/                  # Learning-oriented
-│   ├── getting-started.md      # Build your first page
-│   └── deploy.md               # Deploy to production
-├── guides/                     # Task-oriented
-│   ├── components.mdx          # Using MDX components
-│   └── configuration.md        # Customizing your site
-├── reference/                  # Information-oriented
-│   ├── config.md               # Configuration options
-│   ├── components.md           # Component API reference
-│   └── cli.md                  # CLI commands
-└── concepts/                   # Understanding-oriented
-    ├── how-tome-works.md       # Architecture overview
-    └── file-routing.md         # How routing works
+├── tutorials/                  # Learning-oriented (how to get started)
+│   ├── getting-started.md
+│   └── deploy.md
+├── guides/                     # Task-oriented (how to solve problems)
+│   ├── components.mdx
+│   └── configuration.md
+├── reference/                  # Information-oriented (technical details)
+│   ├── config.md
+│   ├── components.md
+│   └── cli.md
+└── concepts/                   # Understanding-oriented (how things work)
+    ├── how-tome-works.md
+    └── file-routing.md
 ```
 
 ## Commands
 
 | Command | Description |
 |---------|-------------|
-| `npm run dev` | Start dev server at localhost:3000 |
-| `npm run build` | Build static site to `out/` |
-| `npm run deploy` | Deploy to Tome Cloud |
+| `pnpm dev` | Start dev server at localhost:3000 |
+| `pnpm build` | Build static site to `out/` |
+| `pnpm deploy` | Deploy to Tome Cloud |
+
+## Deploying
+
+### Tome Cloud
+
+```bash
+# Login to Tome Cloud
+npx tome login
+
+# Deploy to production
+npx tome deploy
+```
+
+To set up CI/CD with GitHub Actions, add your `TOME_TOKEN` as a repository secret and add a deploy step to the workflow in `.github/workflows/deploy.yml`:
+
+```yaml
+- name: Deploy
+  if: github.event_name == 'push'
+  run: npx tome deploy
+  env:
+    TOME_TOKEN: ${{ secrets.TOME_TOKEN }}
+```
+
+### Vercel
+
+```bash
+npx vercel
+```
+
+### Netlify
+
+```bash
+npx netlify deploy --dir=out
+```
+
+### Static Hosting
+
+Run `pnpm build` and serve the `out/` directory from any static host.
+
+## Configuration
+
+Edit `tome.config.js` to customize your site:
+
+```js
+export default {
+  name: "My Docs",
+  theme: {
+    preset: "amber", // try: ocean, forest, slate, rose, violet
+    mode: "auto",    // auto, light, or dark
+  },
+  // Uncomment to add social links:
+  // socialLinks: [
+  //   { platform: "github", url: "https://github.com/your-org/your-repo" },
+  //   { platform: "twitter", url: "https://x.com/your-handle" },
+  // ],
+};
+```
 
 ## Learn More
 

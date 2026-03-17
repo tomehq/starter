@@ -1,4 +1,4 @@
-name: Deploy Docs
+name: Build Docs
 on:
   push:
     branches: [main]
@@ -6,7 +6,7 @@ on:
     branches: [main]
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -17,17 +17,3 @@ jobs:
           cache: pnpm
       - run: pnpm install --frozen-lockfile
       - run: pnpm build
-
-      # Preview deploy on PRs
-      - name: Deploy Preview
-        if: github.event_name == 'pull_request'
-        run: npx tome deploy --preview
-        env:
-          TOME_TOKEN: ${{ secrets.TOME_TOKEN }}
-
-      # Production deploy on push to main
-      - name: Deploy
-        if: github.event_name == 'push'
-        run: npx tome deploy
-        env:
-          TOME_TOKEN: ${{ secrets.TOME_TOKEN }}
